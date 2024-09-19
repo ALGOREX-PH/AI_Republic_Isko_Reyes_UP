@@ -5,7 +5,7 @@ import pandas as pd
 st.set_page_config(page_title="News Caster Selection", layout="centered")
 
 # Load the dataset
-dataframed = pd.read_csv("Dataset/Articles_AI.csv")
+dataframed = pd.read_csv("https://raw.githubusercontent.com/ALGOREX-PH/AI_Republic_Isko_Reyes_UP/main/Dataset/Articles_AI.csv")
 
 # Initialize session state
 if 'current_page' not in st.session_state:
