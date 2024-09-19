@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # Set the page layout
-st.set_page_config(page_title="News Caster Selection", layout="centered")
+st.set_page_config(page_title="Isko Reyes's News Articles", layout="centered")
 
 # Load the dataset
 dataframed = pd.read_csv("https://raw.githubusercontent.com/ALGOREX-PH/AI_Republic_Isko_Reyes_UP/main/Dataset/Articles_AI.csv")
@@ -23,7 +23,7 @@ if st.session_state.current_page == "Home":
         with col1:
             st.write(dataframed["Title"][x])
         with col2:
-            if st.button(f"Read Story {x + 1}"):
+            if st.button(f"Read Story"):
                 st.session_state.current_page = "Story"
                 st.session_state.story_index = x
                 st.experimental_rerun()  # Force a re-run to update the page
