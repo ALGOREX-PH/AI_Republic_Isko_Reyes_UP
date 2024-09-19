@@ -23,15 +23,15 @@ if st.session_state.current_page == "Home":
         with col1:
             st.write(dataframed["Title"][x])
         with col2:
-            if st.button(f"Read Story"):
+            if st.button(f"Read Story", key = "Read Story : " + str(x + 1)):
                 st.session_state.current_page = "Story"
                 st.session_state.story_index = x
-                st.experimental_rerun()  # Force a re-run to update the page
+                st.rerun()  # Force a re-run to update the page
 
 elif st.session_state.current_page == "Story":
     if st.button("Go Back"):
         st.session_state.current_page = "Home"
-        st.experimental_rerun()  # Force a re-run to update the page
+        st.rerun()  # Force a re-run to update the page
     st.title(dataframed["Title"][st.session_state.story_index])
     st.write(dataframed["UP"][st.session_state.story_index])
     st.markdown("---")
